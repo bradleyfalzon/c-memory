@@ -14,3 +14,10 @@ Before running this program, run the following command to continuously view memo
 ```bash
 while true; do COMM=`grep Committed_AS /proc/meminfo | egrep -o '[0-9]+'`; FREE=`egrep '^(MemFree|Buffers|Cached):' /proc/meminfo | egrep -o '[0-9]+' | paste -sd+ | bc`; echo -e 'Committed:' $COMM 'Free Memory:' $FREE ; sleep 3; done
 ```
+
+To compile:
+
+```bash
+gcc -o main.c main && ./main
+```
+
